@@ -1,0 +1,36 @@
+% !TeX program = lualatex
+% !TeX encoding = UTF-8 Unicode
+\documentclass[
+    11pt,
+    paper=a4,
+    listof=totocnumbered, % lists are also included in table of contents
+    numbers=noendperiod, % Don't add a period at the end of a chapter number
+]{scrbook}
+
+\usepackage{iu-thesis}
+\usepackage{macros}
+\usepackage{blindtext}
+
+%%%% BEGIN VARIABLES %%%%
+\title{Title not more than 150 characters}
+\Author[n]{Name Surname}
+\Department{TEC-EN}
+\Supervision[n]{Prof. Dr. Nachname}
+\Matriclenumber{000000}
+\Submission{1.\,Januar~2070}
+\Address{Musterstraße 42}{54321 Musterstadt}
+\Thesistype{CA}
+%%%% END VARIABLES %%%%
+
+\begin{document}
+    \frontmatter
+    \maketitle
+    \AbstractEN{content/0_abstract}
+    \tableofcontents
+    \listoftables
+    \listoffigures
+    \mainmatter
+    \include{content/1_introduction}
+    \include{content/2_results}
+    \include{content/3_conclusion}
+\end{document}

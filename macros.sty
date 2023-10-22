@@ -1,0 +1,129 @@
+% !TeX encoding = UTF-8 Unicode
+\newcommand{\IUen}{International University of Applied Science}
+\newcommand{\IUde}{Internationale Hochschule}
+%%%% ABSTRACT %%%%
+\newcommand{\Abstract}[1]{%
+  \addchap*{Zusammenfassung}%
+  \pagenumbering{roman}%
+  \input{#1}}
+\newcommand{\AbstractEN}[1]{
+  \addchap*{Abstract}%
+  \pagenumbering{roman}%
+  \input{#1}}
+%%%% DEPARTMENTS %%%%
+\newcommand{\Department}[1]{
+    \ifthenelse{\equal{#1}{ARC-DE}}{\newcommand{\fachbereich}{Architektur & Bau}}{%
+        \ifthenelse{\equal{#1}{DES-DE}}{\newcommand{\fachbereich}{Design & Medien}}{%
+            \ifthenelse{\equal{#1}{GES-DE}}{\newcommand{\fachbereich}{Gesundheit & Soziales}}{%
+                \ifthenelse{\equal{#1}{TEC-DE}}{\newcommand{\fachbereich}{IT & Technik}}{%
+                    \ifthenelse{\equal{#1}{MAR-DE}}{\newcommand{\fachbereich}{Marketing & Kommunikation}}{%
+                        \ifthenelse{\equal{#1}{PER-DE}}{\newcommand{\fachbereich}{Personal & Recht}}{%
+                            \ifthenelse{\equal{#1}{PAE-DE}}{\newcommand{\fachbereich}{Pädagogik & Psychologie}}{%
+                                \ifthenelse{\equal{#1}{TOU-DE}}{\newcommand{\fachbereich}{Tourismus & Hospitality}}{%
+                                    \ifthenelse{\equal{#1}{WIR-DE}}{\newcommand{\fachbereich}{Wirtschaft & Management}}{%
+                                        \ifthenelse{\equal{#1}{ARC-EN}}{\newcommand{\fachbereich}{Architecture & Construction}}{%
+                                            \ifthenelse{\equal{#1}{DES-EN}}{\newcommand{\fachbereich}{Design & Media}}{%
+                                                \ifthenelse{\equal{#1}{GES-EN}}{\newcommand{\fachbereich}{Health & Social Affairs}}{%
+                                                    \ifthenelse{\equal{#1}{TEC-EN}}{\newcommand{\fachbereich}{IT \& Technology}}{%
+                                                        \ifthenelse{\equal{#1}{MAR-EN}}{\newcommand{\fachbereich}{Marketing & Communication}}{%
+                                                            \ifthenelse{\equal{#1}{PER-EN}}{\newcommand{\fachbereich}{Staff & Law}}{%
+                                                                \ifthenelse{\equal{#1}{PAE-EN}}{\newcommand{\fachbereich}{Pedagogy & Psychology}}{%
+                                                                    \ifthenelse{\equal{#1}{TOU-EN}}{\newcommand{\fachbereich}{Tourism & Hospitality}}{%
+                                                                        \ifthenelse{\equal{#1}{WIR-EN}}{\newcommand{\fachbereich}{Business & Management}}{%
+                                                                            \errmessage{Unbekannter Fachbereich}
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+%%%% SUPERVISOR %%%%
+\newcommand{\Supervision}[2][nogender]{%
+    \ifthenelse{\equal{#1}{m}}{\newcommand{\betreuungschluessel}{Betreuer}}{%
+        \ifthenelse{\equal{#1}{f}}{\newcommand{\betreuungschluessel}{Betreuerin}}{%
+            \ifthenelse{\equal{#1}{n}}{\newcommand{\betreuungschluessel}{Supervisor}}{%
+                \newcommand{\betreuungschluessel}{Betreuer/in}
+            }
+        }
+    }
+    \newcommand{\betreuungwert}{#2}
+}
+%%%% AUTHOR %%%%
+\newcommand{\Author}[2][nogender]{%
+    \ifthenelse{\equal{#1}{m}}{%
+        \newcommand{\autorschluessel}{Autor}
+        \newcommand{\studentschluessel}{Studierender}
+    }{%
+        \ifthenelse{\equal{#1}{f}}{%
+            \newcommand{\autorschluessel}{Autorin}
+            \newcommand{\studentschluessel}{Studierende}
+        }{%
+            \ifthenelse{\equal{#1}{n}}{%
+                \newcommand{\autorschluessel}{Author}
+                \newcommand{\studentschluessel}{Student}
+            }{%
+            \newcommand{\autorschluessel}{Autor/in}
+            \newcommand{\studentschluessel}{Studierende/r}
+            }
+        }
+        \newcommand{\autorwert}{#2}
+    }
+}
+%%%% ADDRESS %%%%
+\newcommand{\Address}[2]{%
+  \newcommand{\strhausnr}{#1}
+  \newcommand{\plzort}{#2}
+}
+%%%% MATRICLE NUMBER %%%%
+\newcommand{\Matriclenumber}[1]{\newcommand{\matrikelnummer}{#1}}
+%%%% SUBMISSION DATE %%%%
+\newcommand{\Submission}[1]{\newcommand{\abgabetermin}{#1}}
+%%%% THESIS TYPE %%%%
+\newcommand{\Thesistype}[1]{
+    \ifthenelse{\equal{#1}{CA}}{\newcommand{\thesistype}{Case Study}}{%
+        \ifthenelse{\equal{#1}{BA}}{\newcommand{\thesistype}{Bachelor Thesis}}{%
+            \ifthenelse{\equal{#1}{MA}}{\newcommand{\thesistype}{Master Thesis}}{%
+            \errmessage{Unknown Thesis Type}
+            }
+        }
+    }
+}
+%%%% TITLEPAGE %%%%
+\renewcommand{\maketitle}{
+    \begin{titlepage}
+        \begin{center}
+            \begin{tblr}{columns={50},column{2}={r},cell{1}{2}={r=4}{}}
+                \IUde & \includegraphics[scale=0.25]{images/iu_Logo_ENG_black_RGB.jpg} \\
+                Department \fachbereich &          \\
+                Albert-Proeller-Straße 15-19 &          \\
+                D-86675 Buchdorf &          
+            \end{tblr}
+            \vfill
+            {\Large{\thesistype} \\}
+            \vspace{2.5cm}
+            {\textbf{\LARGE\@title}}
+            \vfill
+            {\begin{tblr}{columns={50},column{1}={r}}
+                \textbf{\betreuungschluessel:} & \betreuungwert \\
+                \textbf{\autorschluessel:} & \autorwert \\
+                \textbf{Matriculation number:} & \matrikelnummer \\
+                \textbf{Address:} & \strhausnr \\
+                        & \plzort \\
+                \textbf{Date of Submission:} & \abgabetermin
+            \end{tblr}}
+        \end{center}
+    \end{titlepage}
+}

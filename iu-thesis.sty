@@ -1,0 +1,31 @@
+% !TeX encoding = UTF-8 Unicode
+
+% Arial font
+\usepackage[english]{babel} % setting for correct grammar
+\usepackage[T1]{fontenc} % for European encoding
+\usepackage{fontspec} % load extended, non-free fonts
+\setmainfont{Arial} % set arial as document-wide font
+
+\usepackage{textcomp} % extended characters
+
+\KOMAoption{twoside}{false} % document is using only one side
+\KOMAoption{open}{any} % chapter start on any page
+\KOMAoption{fontsize}{11pt} % set font size for default font
+\KOMAoption{parskip}{full} % not line intent
+\KOMAoption{listof}{totocnumbered} % adding additional lists to toc
+
+%\usepackage{srchack} % solves some warnings with KOMA-Script
+\usepackage[onehalfspacing]{setspace} % set 1,5 space
+\usepackage{geometry} % set margins
+\geometry{top=2cm, right=2cm, bottom=2cm, left=2cm} % set 2cm margins
+\addtolength{\footskip}{-0.7cm}% foot larger by 0,7 cm  (Raises the page number)
+
+\usepackage{graphicx} % including external graphics
+\usepackage{ifthen} % allows if-then switches
+\usepackage[hyphens]{url} % breaks the line at hyphens (resolves formatting issues in the bibliography)
+\usepackage[hidelinks]{hyperref} % adding contexts, links and allows navigation inside
+
+\usepackage{tabularray}
+%\usepackage[backend=biber,style=verbose,sortcase=false,autolang=other]{biblatex}
+%\bibliography{sources.bib}
+%\defbibheading{biblatex}[\bibname]{{Bibliography}}
