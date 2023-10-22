@@ -1,13 +1,13 @@
 # iu-thesis
 
 ## General Information
-    - Tested with `lualatex` using TeX Live 2023 on macOS
-    - Mainly in English developed
-    - Colab is welcome, just let me know
+- Tested with `lualatex` using TeX Live 2023 on macOS
+- Mainly in English developed
+- Colab is welcome, just let me know
 
 # ToDo
-    - [ ] clean up macros
-    - [ ] write documentation
+- [ ] clean up macros
+- [ ] write documentation
 
 # Documentation
 
