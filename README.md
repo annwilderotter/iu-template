@@ -6,6 +6,7 @@
 - Colab is welcome, just let me know
 
 # ToDo
+- [ ] add Declaration of Authenticity/Eidesstattliche Erlärung
 - [ ] clean up macros
 - [ ] write documentation
 
