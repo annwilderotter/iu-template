@@ -1,5 +1,0 @@
-− Literature review (usually referred to as Chapter 2)
-− Research methodology (usually referred to as Chapter 3)
-− Research findings (usually referred to as Chapter 4)
-− Conclusion (normally referred to as Chapter 5)
-− Recommendations/ Limitations (can be a separate chapter, but can also be included in Chapter 5)
