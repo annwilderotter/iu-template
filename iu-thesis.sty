@@ -29,6 +29,10 @@
 \DTMsetstyle{iso} % using iso view for date/time
 
 \usepackage{tabularray}
-%\usepackage[backend=biber,style=verbose,sortcase=false,autolang=other]{biblatex}
-%\bibliography{sources.bib}
-%\defbibheading{biblatex}[\bibname]{{Bibliography}}
+
+\usepackage[withpage]{acronym} % print acronym page
+
+\usepackage[autostyle]{csquotes} % needed for biblatex
+\usepackage[backend=biber,style=verbose,sortcase=false,autolang=other]{biblatex} % definition of biblatex
+\bibliography{sources/references.bib} % used bibliography
+\defbibheading{bibliography}[\bibname]{{\chapter{Bibliography}}} % naming of chapter
