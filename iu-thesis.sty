@@ -14,7 +14,6 @@
 %\KOMAoption{parskip}{full} % not line intent
 \KOMAoption{listof}{totocnumbered} % adding additional lists to toc
 
-%\usepackage{srchack} % solves some warnings with KOMA-Script
 \usepackage[onehalfspacing]{setspace} % set 1,5 space
 \usepackage{geometry} % set margins
 \geometry{top=2cm, right=2cm, bottom=2cm, left=2cm} % set 2cm margins
@@ -36,3 +35,5 @@
 \usepackage[backend=biber,style=verbose,sortcase=false,autolang=other]{biblatex} % definition of biblatex
 \bibliography{sources/references.bib} % used bibliography
 \defbibheading{bibliography}[\bibname]{{\chapter{Bibliography}}} % naming of chapter
+
+\usepackage{scrhack} % solves some warnings with KOMA-Script, needs to be at the end
