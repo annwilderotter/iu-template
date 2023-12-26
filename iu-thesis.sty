@@ -11,7 +11,7 @@
 \KOMAoption{twoside}{false} % document is using only one side
 \KOMAoption{open}{any} % chapter start on any page
 \KOMAoption{fontsize}{11pt} % set font size for default font
-\KOMAoption{parskip}{full} % not line intent
+%\KOMAoption{parskip}{full} % not line intent
 \KOMAoption{listof}{totocnumbered} % adding additional lists to toc
 
 %\usepackage{srchack} % solves some warnings with KOMA-Script
@@ -24,6 +24,9 @@
 \usepackage{ifthen} % allows if-then switches
 \usepackage[hyphens]{url} % breaks the line at hyphens (resolves formatting issues in the bibliography)
 \usepackage[hidelinks]{hyperref} % adding contexts, links and allows navigation inside
+
+\usepackage{datetime2} % for draft footer generating current date/time
+\DTMsetstyle{iso} % using iso view for date/time
 
 \usepackage{tabularray}
 %\usepackage[backend=biber,style=verbose,sortcase=false,autolang=other]{biblatex}

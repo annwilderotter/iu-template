@@ -5,11 +5,23 @@
     paper=a4,
     listof=totocnumbered, % lists are also included in table of contents
     numbers=noendperiod, % Don't add a period at the end of a chapter number
+    headsepline, % seperating header with a line
+    footsepline % seperating footer with a line
 ]{scrbook}
 
 \usepackage{iu-thesis}
 \usepackage{macros}
 \usepackage{blindtext}
+
+\usepackage[withpage]{acronym}
+
+\usepackage[autostyle]{csquotes} 
+\usepackage[backend=biber,
+  style=verbose,sortcase=false,
+  autolang=other]{biblatex}
+\bibliography{sources/references.bib}
+\defbibheading{bibliography}[\bibname]
+  {{\chapter{Bibliography}}}
 
 %%%% BEGIN VARIABLES %%%%
 \title{Title not more than 150 characters}
@@ -25,12 +37,20 @@
 \begin{document}
     \frontmatter
     \maketitle
+    \include{content/a_lockflag}
+    \include{content/b_dedication}
+    \include{content/c_acknowledgement}
     \AbstractEN{content/0_abstract}
     \tableofcontents
     \listoftables
     \listoffigures
+    \include{content/d_abbreviation}
     \mainmatter
     \include{content/1_introduction}
     \include{content/2_results}
     \include{content/3_conclusion}
+    \backmatter
+    \printbibliography
+    \appendix
+    \include{content/z_glossary}
 \end{document}
